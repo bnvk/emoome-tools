@@ -1,0 +1,103 @@
+{
+  "phrases" : {
+    "D" : [
+
+    ],
+    "I" : [
+
+    ],
+    "E" : [
+
+    ],
+    "A" : [
+
+    ],
+    "S" : [
+
+    ],
+    "P" : [
+
+    ],
+    "U" : [
+
+    ]
+  },
+  "title" : "gender Words",
+  "sources" : [
+    "http:\/\/localhost\/emoome\/utilities\/show_language_file\/gender\/gender_sensory",
+    "http:\/\/localhost\/emoome\/utilities\/show_language_file\/gender\/gender_intellectual",
+    "http:\/\/localhost\/emoome\/utilities\/show_language_file\/gender\/gender_lgbt_intellectual"
+  ],
+  "language" : "english",
+  "topic" : "GE",
+  "full" : "gender",
+  "words" : {
+    "D" : [
+
+    ],
+    "I" : [
+      "gender",
+      "masculine",
+      "feminine",
+      "fraternity",
+      "sorority",
+      "ms",
+      "mister",
+      "mr",
+      "mistress",
+      "mrs",
+      "macho",
+      "machismo",
+      "sissy",
+      "effeminate",
+      "effeminacy",
+      "lgbt",
+      "lgbtq",
+      "lgbtqa",
+      "tblg",
+      "gay",
+      "lesbian",
+      "genderqueer",
+      "cisgender",
+      "transgender",
+      "bisexual",
+      "transexual",
+      "tranny",
+      "trannie",
+      "transvestite",
+      "hermaphrodite",
+      "fag",
+      "faggot",
+      "homophobia",
+      "homosexual",
+      "queer",
+      "biphobia"
+    ],
+    "E" : [
+
+    ],
+    "A" : [
+
+    ],
+    "S" : [
+      "male",
+      "female",
+      "boy",
+      "chick",
+      "dude",
+      "gal",
+      "girl",
+      "guy",
+      "man",
+      "men",
+      "woman",
+      "women"
+    ],
+    "P" : [
+
+    ],
+    "U" : [
+
+    ]
+  }
+}

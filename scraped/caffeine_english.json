@@ -1,0 +1,90 @@
+{
+  "phrases" : {
+    "D" : [
+    	"espresso machine",
+    	"coffee shop"
+    ],
+    "I" : [
+
+    ],
+    "E" : [
+
+    ],
+    "A" : [
+
+    ],
+    "S" : [
+    	"black tea",
+    	"green tea",
+    	"iced tea",
+
+    ],
+    "P" : [
+
+    ],
+    "U" : [
+
+    ]
+  },
+  "title" : "caffeine Words",
+  "sources" : [
+    "http:\/\/localhost\/emoome\/utilities\/show_language_file\/caffeine\/caffeine_descriptor",
+    "http:\/\/localhost\/emoome\/utilities\/show_language_file\/caffeine\/caffeine_sensory",
+    "http:\/\/localhost\/emoome\/utilities\/show_language_file\/caffeine\/caffeine_physical"
+  ],
+  "language" : "english",
+  "topic" : "CA",
+  "full" : "caffeine",
+  "words" : {
+    "D" : [
+      "arabica",
+      "robusta",
+      "teapot",
+      "cafe",
+      "café",      
+      "caffe"
+    ],
+    "I" : [
+
+    ],
+    "E" : [
+
+    ],
+    "A" : [
+
+    ],
+    "S" : [
+      "coffee",
+      "americano",
+      "barista",
+      "cappuccino",
+      "chai",
+      "crema",
+      "doppio",
+      "espresso",
+      "java",
+      "latte",
+      "macchiato",
+      "maracaibo",
+      "matcha",
+      "mate",
+      "moca",
+      "mocca",
+      "mocha",
+      "moka",
+      "oolong",
+      "sencha",
+      "tea"
+    ],
+    "P" : [
+      "caffeine",
+      "caffeinated",
+      "buzzing",
+      "jitters",
+      "jittery"
+    ],
+    "U" : [
+
+    ]
+  }
+}

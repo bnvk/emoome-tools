@@ -1,7 +1,7 @@
 // art_1.js
 module.exports = {
 	title: 'Finance Words',
-	full: 'finance',
+	full: 'financial',
 	language: 'english',
 	type: 'U',
 	topic: 'FI',

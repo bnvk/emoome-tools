@@ -14,6 +14,7 @@ var debug = {
 	added_words: [],
 	added_phrases: [],
 	duplicates: [],
+	not_filtered: [],
 	filtered: [],
 	actions: []
 }
@@ -29,9 +30,7 @@ fs.exists(filename, function(exists) {
 	debug.actions.push('Checking for existing file: ' + filename);
 
 	if (exists) {
-		debug.actions.push('Splendid file exists open it up');			
-
-		//var template = new OpenFile(fs, filename);
+		debug.actions.push('Splendid file exists open it up');
 
 	    fs.stat(filename, function(error, stats) {
 	      fs.open(filename, "r", function(error, fd) {
@@ -49,7 +48,9 @@ fs.exists(filename, function(exists) {
 	    });
 	}
 	else {
+
 		debug.actions.push('Here we go create new file template');
+
 		var template = {
 			title: instructions.title,
 			language: instructions.language,
@@ -67,45 +68,56 @@ fs.exists(filename, function(exists) {
 
 
 // Processing Logic
-var ProcessText = function(template, text) {
+var ProcessText = function(type, template, text) {
 
-	var text_lower = text.toLowerCase();
-	var text_check = text_lower.split(' ');
-	var text_count = text_check.length;
+	var text_trim  = text.trim(),
+	text_ready = text_trim.toLowerCase();
 
-	// Phrases
-	if (text_count > 1) {
+	// For Word / Phrase check
+	var text_check = text_ready.split(' ');
 
-		var check_phrase = _.indexOf(template.phrases[instructions.type], text_lower);
+	// Is Phrase
+	if (text_check.length > 1) {
 
-		// Add Phrase
+		var check_phrase = _.indexOf(template.phrases["U"], text_ready);
+
+		// Check if existing / then add Phrase
 		if (check_phrase === -1 && text !== ' ') {
 
 			// Add
-			template.phrases[instructions.type].push(text_lower);
+			template.phrases["U"].push(text_ready);
 
 			// Add to debug
-			debug.added_phrases.push(text_lower);
+			debug.added_phrases.push(text_ready);
 		}
 		else {
-			debug.duplicates.push(text_lower);			
+			debug.duplicates.push(text_ready);
 		}
 	}
-	else if (text_count === 1) {
+	// Is Word
+	else if (text_check.length === 1) {
 
-		var check_word = _.indexOf(template.words[instructions.type], text_lower);
+		var check_array = [
+			_.indexOf(template.words["E"], text_ready),
+			_.indexOf(template.words["I"], text_ready),
+			_.indexOf(template.words["D"], text_ready),
+			_.indexOf(template.words["S"], text_ready),
+			_.indexOf(template.words["A"], text_ready),
+			_.indexOf(template.words["P"], text_ready),
+			_.indexOf(template.words["U"], text_ready)
+		];
 
-		// Add Single Word
-		if (check_word === -1 && text_lower !== '') {
+		// Check if existing / then add Word
+		if (_.without(check_array, -1).length === 0 && text !== '') {
 
 			// Add
-			template.words[instructions.type].push(text_lower);
+			template.words[type].push(text_ready);
 
 			// Add to debug
-			debug.added_words.push(text_lower);
+			debug.added_words.push(text_ready);
 		}
 		else {
-			debug.duplicates.push(text_lower);			
+			debug.duplicates.push(text_ready);
 		}
 	}
 }
@@ -118,50 +130,66 @@ var startRequest = function(template) {
 	
 		// Debuging
 		debug.actions.push('Making request');
-		var element_count = 0;
+		var element_count = 0;		
 		
-		template.sources.push(instructions.url);
-	
-		// Load DOM
-		var $ = cheerio.load(body, {
-			ignoreWhitespace: false,
-			lowerCaseTags: false
-		});
-	
-	
-		// Parse DOM
-		if (instructions.element) {
+		// Add Source if NOT added
+		if (_.indexOf(template.sources, instructions.url) === -1) {	
+			debug.actions.push('Added URL: ' + instructions.url);
+			template.sources.push(instructions.url);
+		}
+
+		// Parse JSON (from old API)
+		if (instructions.element === 'json') {
+		
+			var api = JSON.parse(body);
+
+			for (word in api.words) {
+				element_count++;
+				ProcessText(api.type, template, api.words[word]);
+			};
+		}
+		// Parse DOM		
+		else if (instructions.element) {
+
+			// Load DOM
+			var $ = cheerio.load(body, {
+				ignoreWhitespace: false,
+				lowerCaseTags: false
+			});
+
 			$(instructions.element).each(function() {
 
 				element_count++;
 
 				// Get HTML text
-				var text = $(this).text();
-				var check_filter = _.indexOf(instructions.filter, text);
+				var text_original = $(this).text();
+				var text_clean = instructions.clean(text_original);
+				var check_filter = _.indexOf(instructions.filter, text_original);
+
+				// Debug Filter (is in list word)
+				//console.log(check_filter + ' --- ' + text);
 
 				// Filter Out Junk
 				if (check_filter === -1) {
 
-					// Clean
-					text = instructions.clean(text);
+					// Pre Clean for debug
+					debug.not_filtered.push(text_original);
 
 					// Handle Ouput
-					if (text.type === 'string') {
+					if (text_clean.type === 'string') {
 
-						//debug.actions.push('inside ProcessText.string');
-						ProcessText(template, text.data);
+						ProcessText(instructions.type, template, text_clean.data);
 					}
-					else if (text.type === 'array') {
+					else if (text_clean.type === 'array') {
 
-						//debug.actions.push('inside ProcessText.array');
-						for (word in text.data) {
-							ProcessText(template, text.data[word]);
+						for (word in text_clean.word) {
+							ProcessText(instructions.type, template, text_clean.word[word]);
 						}
 					}
 				}
 				// Fails filter
 				else {
-					debug.filtered.push(check_filter + ' filtered: ' + text);
+					debug.filtered.push(text_original);
 				}
 			});
 		}
@@ -172,11 +200,11 @@ var startRequest = function(template) {
 
 			// Handle Ouput
 			if (text.type === 'string') {
-				ProcessText(template, text.data);
+				ProcessText(instructions.type, template, text.data);
 			}
 			else if (text.type === 'array') {
 				for (word in text.data) {
-					ProcessText(template, text.data[word]);
+					ProcessText(instructions.type, template, text.data[word]);
 				}
 			}				
 		}
