@@ -1,0 +1,98 @@
+{
+   "topic" : "L",
+   "sources" : [
+      "http://localhost/emoome/utilities/show_language_file/love/love_emotions",
+      "http://localhost/emoome/utilities/show_language_file/love/love_actions",
+      "http://localhost/emoome/utilities/show_language_file/love/love_descriptor",
+      "http://localhost/emoome/utilities/show_language_file/love/love_intellectual",
+      "http://www.romantic-whispers.com/romantic-words.html#.UZX7cStHD_I"
+   ],
+   "language" : "english",
+   "title" : "Romance Words",
+   "phrases" : {
+      "A" : [],
+      "S" : [],
+      "D" : [],
+      "P" : [],
+      "I" : [],
+      "E" : [
+         "my beloved"
+      ],
+      "U" : []
+   },
+   "full" : "romance",
+   "words" : {
+      "A" : [
+         "flirt",
+         "flirty",
+         "flirting",
+         "flirted",
+         "romance",
+         "romantic",
+         "date",
+         "dating"
+      ],
+      "S" : [],
+      "D" : [
+         "okcupid",
+         "matchcom",
+         "eharmony"
+      ],
+      "P" : [],
+      "I" : [
+         "boyfriend",
+         "girlfriend"
+      ],
+      "E" : [
+         "love",
+         "loved",
+         "loving",
+         "lovingly",
+         "romance",
+         "valentine",
+         "magic",
+         "admirable",
+         "adorable",
+         "affectionate",
+         "alluring",
+         "awesome",
+         "beautiful",
+         "beloved",
+         "bright",
+         "caring",
+         "charming",
+         "commitment",
+         "cuddly",
+         "cute",
+         "dazzling",
+         "darling",
+         "delicious",
+         "divine",
+         "elegant",
+         "embellish",
+         "enchanting",
+         "exceptional",
+         "fabulous",
+         "fascinating",
+         "harmonious",
+         "honey",
+         "incomparable",
+         "immortal",
+         "joyful",
+         "kindly",
+         "kiss",
+         "light",
+         "loyal",
+         "mesmerize",
+         "passion",
+         "precious",
+         "pretty",
+         "proud",
+         "radiant",
+         "romantic",
+         "unforgettable",
+         "sweatheart"
+      ],
+      "U" : []
+   }
+}

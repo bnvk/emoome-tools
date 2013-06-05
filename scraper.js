@@ -22,7 +22,7 @@ var debug = {
 
 // Instructions & Filename - what job to do (and how to do it)
 var instructions = require('./jobs/' + process.argv[3]);
-var filename = './scraped/' + instructions.full + '_' + instructions.language + '.json';
+var filename = './scraped/' + instructions.language + '/' + instructions.full + '.json';
 
 // If file exist
 fs.exists(filename, function(exists) {
@@ -49,17 +49,33 @@ fs.exists(filename, function(exists) {
 	}
 	else {
 
-		debug.actions.push('Here we go create new file template');
+		if (process.argv[4] === 'patterns') {
 
-		var template = {
-			title: instructions.title,
-			language: instructions.language,
-			full: instructions.full,
-			topic: instructions.topic,
-			sources: [],
-			words: {"U":[],"E":[],"I":[],"D":[],"S":[],"P":[],"A":[]},
-			phrases: {"U":[],"E":[],"I":[],"D":[],"S":[],"P":[],"A":[]}
-		};
+			debug.actions.push('Here we go create Patterns file template');
+
+			var template = {
+				title: instructions.title,
+				language: instructions.language,
+				full: instructions.full,
+				topic: instructions.topic,
+				sources: [],
+				phrases: {"alliterations":[],"opposites":[],"duos":[],"D":[],"S":[],"P":[],"A":[]}
+			};
+		}
+		else {
+
+			debug.actions.push('Here we go create Normal file template');
+			
+			var template = {
+				title: instructions.title,
+				language: instructions.language,
+				full: instructions.full,
+				topic: instructions.topic,
+				sources: [],
+				words: {"U":[],"E":[],"I":[],"D":[],"S":[],"P":[],"A":[]},
+				phrases: {"U":[],"E":[],"I":[],"D":[],"S":[],"P":[],"A":[]}
+			};
+		}
 
 		startRequest(template);		
 	}
@@ -167,7 +183,7 @@ var startRequest = function(template) {
 				var check_filter = _.indexOf(instructions.filter, text_original);
 
 				// Debug Filter (is in list word)
-				//console.log(check_filter + ' --- ' + text);
+				//console.log(check_filter + ' --- ' + text_clean);
 
 				// Filter Out Junk
 				if (check_filter === -1) {
@@ -177,7 +193,6 @@ var startRequest = function(template) {
 
 					// Handle Ouput
 					if (text_clean.type === 'string') {
-
 						ProcessText(instructions.type, template, text_clean.data);
 					}
 					else if (text_clean.type === 'array') {
@@ -185,6 +200,9 @@ var startRequest = function(template) {
 						for (word in text_clean.word) {
 							ProcessText(instructions.type, template, text_clean.word[word]);
 						}
+					}
+					else {
+						console.log('not processed: ' + text_clean);
 					}
 				}
 				// Fails filter

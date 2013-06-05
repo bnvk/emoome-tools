@@ -1,4 +1,4 @@
-// legal_2.js
+// crime_1.js
 module.exports = {
 	title: 'Crime Words',
 	full: 'crime',

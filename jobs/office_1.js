@@ -1,0 +1,20 @@
+// office_1.js
+module.exports = {
+	title: 'Office Words',
+	full: 'office',
+	language: 'english',
+	type: 'U',
+	topic: 'OF',
+	url: 'http://www.enchantedlearning.com/wordlist/office.shtml',
+	element: false,
+	filter: [],
+	clean: function() {
+
+		var output = {
+			type: "array",
+			data: "accountant<br> accounting<br> accounts<br> accruals<br> ads<br> advertise<br> affordable<br> agenda<br> agreement<br> arbitration<br> benefits<br> bill of lading<br> board<br> board of directors<br> bond<br> bonus<br> bookkeeping<br> borrow<br> boss<br> bottom line<br> break even<br> briefcase<br> budget<br> business<br> business card<br> buy<br> buyer<br> calculate<br> capital<br> capitalist<br> career<br> cargo<br> chairman<br> chairwoman<br> charge<br> clause<br> client<br> close<br> collateral<br> cold call<br> commerce<br> commercial<br> commission<br> commodity<br> company<br> competition<br> compromise<br> consumer<br> contract<br> copyright<br> corporate<br> corporation<br> cost<br> corner office<br> coupon<br> credit<br> credit card<br> cubicle<br> currency<br> customer<br> database<br> deadline<br> deal<br> debit<br> deflation<br> demand<br> department<br> discount<br> director<br> discount<br> dismiss<br> distribution<br> diversify<br> dividend<br> download<br> down payment<br> duty<br> duties<br> economical<br> economics<br> economy of scale<br> efficiency<br> employ<br> employee<br> employer<br> employment<br> entrepreneur<br> equipment<br> estimate<br> executive<br> expenses<br> export<br> facility<br> factory<br> fax<br> figures<br> finance<br> financial<br> fire<br> foreman<br> framework<br> freight<br> fund<br> goods<br> graph<br> gross<br> growth<br> guidebook<br> headhunter<br> headquarters<br> high<br> hire<br> hours<br> import<br> incentive<br> income<br> income tax<br> inflation<br> insurance<br> intern<br> interest rate<br> interview<br> inventory<br> invest<br> investment<br> invoice<br> job<br> labor<br> laborer<br> laptop<br> lead<br> lease<br> leave<br> letterhead<br> liability<br> loan<br> log-in<br> loss<br> low<br> lucrative<br> mailbox<br> mainframe<br> manage<br> manager<br> management<br> market<br> marketing<br> meeting<br> memo<br> merchandise<br> merchant<br> money<br> monopoly<br> motherboard<br> mouse pad<br> negotiate<br> negotiation<br> net<br> network<br> net worth<br> niche<br> notebook<br> notice<br> no-win<br> occupation<br> offer<br> office<br> offline<br> opportunity<br> open<br> order<br> organization<br> online<br> outgoing<br> owner<br> overdraft<br> overhead<br> packing list<br> paperweight<br> partner<br> password<br> pay<br> payment<br> perk<br> personnel<br> plan<br> policy<br> portfolio<br> position<br> presentation<br> president<br> price<br> prime rate<br> principal<br> product<br> production<br> profit<br> profitable<br> promotion<br> proposal<br> prospects<br> proxy<br> purchase order<br> purchasing<br> quarter<br> quit<br> rank<br> receipt<br> recruit<br> recruiter<br> refund<br> resign<br> résumé<br> retail<br> retailer<br> retire<br> risk<br> salary<br> sale<br> salesman<br> sales tax<br> saleswoman<br> secretary<br> sell<br> seller<br> service<br> shareholder<br> ship<br> shipment<br> shipping<br> shop<br> sick leave<br> sign<br> signature<br> spreadsheet<br> staff<br> statement<br> stock<br> stockholder<br> strike<br> success<br> superintendent<br> supervisor<br> supply<br> target<br> tariff<br> tax<br> temp<br> terms<br> trade<br> trade-off<br> trainee<br> transaction<br> treasurer<br> treasury<br> trend<br> typeface<br> typewriter<br> upgrade<br> upload<br> unemployment<br> union<br> unit cost<br> username<br> vacancy<br> vacation time<br> venture<br> vice-president<br> video conference<br> volume<br><br> warranty<br> wastebasket<br> waybill<br> wholesale<br> wholesaler<br> win-win<br> withdraw<br> work<br> worker<br> workroom<br> workspace<br> yield".split('<br> ')
+		};
+
+		return output;
+	}
+};

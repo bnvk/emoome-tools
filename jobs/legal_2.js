@@ -3,7 +3,7 @@ module.exports = {
 	title: 'Legal Words',
 	full: 'legal',
 	language: 'english',
-	type: 'U',
+	type: 'I',
 	topic: 'LE',
 	url: 'http://www.macmillandictionary.com/thesaurus-category/british/The-law-laws-and-parts-of-laws',
 	element: 'div.entry a h3',

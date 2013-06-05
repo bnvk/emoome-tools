@@ -1,4 +1,4 @@
-// art_1.js
+// nature_1.js
 module.exports = {
 	title: 'Nature Words',
 	full: 'nature',
