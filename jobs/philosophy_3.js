@@ -15,10 +15,7 @@ module.exports = {
 		text = text.replace(' (theology)', '');
 		text = text.replace(' - ultimacy-analogous usage', '');
 		text = text.replace('"', '');
-		text = text.replace('', '');
-
-	
-	
+		text = text.replace('', '');	
 	
 		if (text.length > 1) {	
 			var output = {

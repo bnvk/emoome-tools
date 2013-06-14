@@ -202,7 +202,7 @@ var startRequest = function(template) {
 						}
 					}
 					else {
-						console.log('not processed: ' + text_clean);
+						//console.log('not processed: ' + text_clean);
 					}
 				}
 				// Fails filter
