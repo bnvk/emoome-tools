@@ -12,7 +12,7 @@
       "D" : [],
       "P" : [],
       "I" : [],
-      "S" : [],
+      "S" : [
          "acoustic guitar",
          "aeolian harp",
          "alto saxophone",
@@ -60,6 +60,7 @@
          "wind chime",
          "wind instruments",
          "woodwind instruments"
+       ],
        "U" : [       
          "aeolian mode",
          "breath mark",

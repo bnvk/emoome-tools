@@ -1,40 +1,29 @@
 {
-  "phrases" : {
-    "D" : [
-    	"espresso machine",
-    	"coffee shop"
-    ],
-    "I" : [
-
-    ],
-    "E" : [
-
-    ],
-    "A" : [
-
-    ],
-    "S" : [
-    	"black tea",
-    	"green tea",
-    	"iced tea",
-
-    ],
-    "P" : [
-
-    ],
-    "U" : [
-
-    ]
-  },
-  "title" : "caffeine Words",
+  "topic" : "CA",
   "sources" : [
     "http:\/\/localhost\/emoome\/utilities\/show_language_file\/caffeine\/caffeine_descriptor",
     "http:\/\/localhost\/emoome\/utilities\/show_language_file\/caffeine\/caffeine_sensory",
     "http:\/\/localhost\/emoome\/utilities\/show_language_file\/caffeine\/caffeine_physical"
   ],
   "language" : "english",
-  "topic" : "CA",
+  "title" : "Caffeine Words",
   "full" : "caffeine",
+  "phrases" : {
+    "D" : [
+    	"espresso machine",
+    	"coffee shop"
+    ],
+    "I" : [],
+    "E" : [],
+    "A" : [],
+    "S" : [
+    	"black tea",
+    	"green tea",
+    	"iced tea"
+    ],
+    "P" : [],
+    "U" : []
+  },
   "words" : {
     "D" : [
       "arabica",
@@ -44,15 +33,9 @@
       "café",      
       "caffe"
     ],
-    "I" : [
-
-    ],
-    "E" : [
-
-    ],
-    "A" : [
-
-    ],
+    "I" : [],
+    "E" : [],
+    "A" : [],
     "S" : [
       "coffee",
       "americano",
@@ -83,8 +66,6 @@
       "jitters",
       "jittery"
     ],
-    "U" : [
-
-    ]
+    "U" : []
   }
 }
